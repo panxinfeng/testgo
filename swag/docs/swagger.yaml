@@ -1,0 +1,228 @@
+basePath: /
+host: sv.mi-cloud.cn:5000
+info:
+  contact: {}
+  description: 外链接口
+  title: 外链接口
+  version: "1.0"
+paths:
+  /download:
+    get:
+      description: http协议下载文件
+      parameters:
+      - description: 外链URL
+        in: query
+        name: surl
+        required: true
+        type: string
+      - description: 提取码
+        in: query
+        name: ecode
+        required: true
+        type: string
+      - description: 文件
+        in: query
+        name: path
+        required: true
+        type: string
+      responses: {}
+      summary: http协议下载文件
+      tags:
+      - 外链下载
+  /folder:
+    get:
+      description: 查看文件夹信息
+      parameters:
+      - description: 外链URL
+        in: query
+        name: surl
+        required: true
+        type: string
+      - description: 提取码
+        in: query
+        name: ecode
+        required: true
+        type: string
+      - description: 文件夹
+        in: query
+        name: path
+        required: true
+        type: string
+      responses: {}
+      summary: 查看文件夹信息
+      tags:
+      - 外链下载
+  /link/create:
+    get:
+      description: 创建外链
+      parameters:
+      - description: 用户ID
+        in: query
+        name: uid
+        required: true
+        type: string
+      - description: 设备ID
+        in: query
+        name: device_id
+        required: true
+        type: string
+      - description: 用户名
+        in: query
+        name: nick
+        required: true
+        type: string
+      - description: 用户头像地址
+        in: query
+        name: avatar
+        required: true
+        type: string
+      - description: 分享根目录
+        in: query
+        name: base_path
+        required: true
+        type: string
+      - description: 分享的文件或目录,可以多个,paths=file1&paths=file2
+        in: query
+        name: paths
+        required: true
+        type: string
+      - description: 4位提取码
+        in: query
+        name: ecode
+        required: true
+        type: string
+      - description: 分享天数
+        in: query
+        name: days
+        required: true
+        type: string
+      - description: 可下载次数,0为无限
+        in: query
+        name: max_downloads
+        required: true
+        type: string
+      responses: {}
+      summary: link_create 创建外链
+      tags:
+      - 外链管理
+  /link/delete:
+    get:
+      description: 获取用户用户创建的所有外链
+      parameters:
+      - description: 创建外链返回ID
+        in: query
+        name: id
+        required: true
+        type: string
+      - description: 用户ID
+        in: query
+        name: uid
+        required: true
+        type: string
+      - description: 设备ID
+        in: query
+        name: device_id
+        required: true
+        type: string
+      responses: {}
+      summary: links 获取用户用户创建的所有外链
+      tags:
+      - 外链管理
+  /link/fetch:
+    get:
+      description: 获取外链详细信息
+      parameters:
+      - description: 外链URL
+        in: query
+        name: surl
+        required: true
+        type: string
+      - description: 提取码
+        in: query
+        name: ecode
+        required: true
+        type: string
+      responses: {}
+      summary: 获取外链详细信息
+      tags:
+      - 外链下载
+  /link/update:
+    get:
+      description: 更新外链文件
+      parameters:
+      - description: 创建外链返回的ID
+        in: query
+        name: id
+        required: true
+        type: string
+      - description: 用户ID
+        in: query
+        name: uid
+        required: true
+        type: string
+      - description: 设备ID
+        in: query
+        name: device_id
+        required: true
+        type: string
+      - description: 分享的文件或目录,可以多个,paths=file1&paths=file2
+        in: query
+        name: paths
+        required: true
+        type: string
+      responses: {}
+      summary: link_update 更新外链
+      tags:
+      - 外链管理
+  /link/user:
+    get:
+      description: 获取外链的分享用户的信息
+      parameters:
+      - description: 外链URL
+        in: query
+        name: surl
+        required: true
+        type: string
+      responses: {}
+      summary: 获取外链的分享用户的信息
+      tags:
+      - 外链管理
+  /links:
+    get:
+      description: 获取用户用户创建的所有外链
+      parameters:
+      - description: 用户ID
+        in: query
+        name: uid
+        required: true
+        type: string
+      responses: {}
+      summary: links 获取用户用户创建的所有外链
+      tags:
+      - 外链管理
+  /query:
+    get:
+      description: 查询文件信息
+      parameters:
+      - description: 外链URL
+        in: query
+        name: surl
+        required: true
+        type: string
+      - description: 提取码
+        in: query
+        name: ecode
+        required: true
+        type: string
+      - description: 文件
+        in: query
+        name: paths
+        required: true
+        type: string
+      responses: {}
+      summary: 查询文件信息
+      tags:
+      - 外链下载
+schemes:
+- https
+swagger: "2.0"

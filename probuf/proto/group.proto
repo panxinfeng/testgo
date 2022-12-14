@@ -1,0 +1,59 @@
+syntax = "proto3";
+package packet;
+option go_package = "./packet;pack";
+
+message AddGroupRQ{
+    string ApplyUUID = 1;
+    string GroupUUID = 2;
+    string OwnerUUID = 3;
+}
+
+message AddGroupACK{
+    string ApplyUUID = 1;
+    string ConfirmUUID = 2;
+    bool Accept = 5;
+    string Reason = 6;
+}
+
+message LeaveGroupRQ{
+    string MemberUUID = 1;
+    string GroupUUID =2;
+}
+
+message GroupInfo{
+    string UUID = 1;
+    string Name = 2;
+    string CreateUUID = 3;
+    string Description = 4;
+    string PrivateKey = 5;
+    string PublicKey =6;
+    string Icon = 7;
+    int64 CreateAt = 8;
+}
+
+message GroupListRP{
+    repeated GroupInfo GroupList = 1;
+}
+
+
+message GetGroupMemberRQ{
+    string GroupUUID = 1;
+}
+
+message GroupMember{
+    string GroupUUID = 2;
+    string UUID = 3;
+    string Icon = 4;
+    string Name = 5;
+    uint32 Role = 7;  //0群组创建者，1群组管理者，2普通成员
+    string Remark =8;
+}
+
+message GetGroupMemberRP{
+    repeated GroupMember GroupMembers= 1;
+}
+
+message CreateGroup {
+    string Name = 1;
+    string Description = 2;
+}

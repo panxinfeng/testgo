@@ -1,0 +1,61 @@
+syntax = "proto3";
+package tcp;
+option go_package = "./tcp;tcp";
+
+message Packet {
+    string session = 1;
+    uint32 kind = 2;
+    bytes data = 3;
+}
+
+message Query{
+    string base_path = 1;
+    repeated string paths = 2;
+}
+
+message Folder{
+    string base_path = 1;
+    string path = 2;
+}
+
+message Open{
+    string base_path = 1;
+    string path = 2;
+}
+
+message Read{
+    uint32 n =1;
+}
+
+message Seek{
+    int64 offset = 1;
+    int32 whence = 2;
+}
+
+message File{
+    string name = 1;
+    string path = 2;
+    bool is_dir = 3;
+    int64 size = 4;
+    bool exist = 5;
+}
+
+message FolderRP {
+    repeated File files = 1;
+}
+
+message OpenRP {
+    string err = 1;
+    bytes mod_time = 2;
+}
+
+message ReadRP{
+    uint32 n = 1;
+    string err = 2;
+    bytes data = 3;
+}
+
+message SeekRP {
+    int64 n = 1;
+    string err = 2;
+}

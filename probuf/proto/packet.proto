@@ -1,0 +1,13 @@
+syntax = "proto3";
+package packet;
+option go_package = "./packet;pack";
+
+message Pack {
+   string MsgId = 1;
+   uint32 Kind = 2;
+   uint32 MsgType = 3;
+   uint32 MsgCode = 4;
+   string From = 5;
+   string To = 6;
+   bytes  Payload = 7;
+}

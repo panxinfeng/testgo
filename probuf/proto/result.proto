@@ -1,0 +1,12 @@
+syntax = "proto3";
+package result;
+option go_package = "./result;result";
+message Result  {
+  uint32 Code = 1;
+  string Msg = 2;
+  bytes Data=3;
+}
+
+message Common {
+  string Id = 1;
+}

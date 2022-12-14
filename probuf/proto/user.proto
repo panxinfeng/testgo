@@ -1,0 +1,35 @@
+syntax = "proto3";
+package packet;
+option go_package = "./packet;pack";
+
+message AddFriendRQ{
+    string ApplyUUID = 1;
+    string ConfirmUUID = 2;
+}
+
+message AddFriendACK{
+    string ApplyUUID = 1;
+    string ConfirmUUID = 2;
+    bool Accept = 5;
+    string Reason = 6;
+}
+
+message RemoveFriendRQ {
+    string FromUUID = 1;
+    string ToUUID = 2;
+}
+
+message User{
+    string UUID = 1;
+    string Name = 2;
+    string NickName = 3;
+    string Icon = 5;
+    uint32 Gender = 6;
+    string Phone = 7;
+    string Birth = 8;
+    string Email = 9;
+}
+
+message FriendListRP{
+    repeated User users=1;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+package hello;
+option go_package = "./hello;hello";
+
+message String {
+    string value = 1;
+}
+
+message RP {
+    int32 id = 1;
+    bytes data =2;
+}
+
+service HelloService {
+    rpc Hello (String) returns (String);
+}

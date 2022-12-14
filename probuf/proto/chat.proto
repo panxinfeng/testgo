@@ -1,0 +1,7 @@
+syntax = "proto3";
+package chat;
+option go_package = "./chat;chat";
+message ChatMessage  {
+  uint32 Typ = 1;
+  string Content = 2;
+}

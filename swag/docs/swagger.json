@@ -1,0 +1,327 @@
+{
+    "schemes": [
+        "https"
+    ],
+    "swagger": "2.0",
+    "info": {
+        "description": "外链接口",
+        "title": "外链接口",
+        "contact": {},
+        "version": "1.0"
+    },
+    "host": "sv.mi-cloud.cn:5000",
+    "basePath": "/",
+    "paths": {
+        "/download": {
+            "get": {
+                "description": "http协议下载文件",
+                "tags": [
+                    "外链下载"
+                ],
+                "summary": "http协议下载文件",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "外链URL",
+                        "name": "surl",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "提取码",
+                        "name": "ecode",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "文件",
+                        "name": "path",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/folder": {
+            "get": {
+                "description": "查看文件夹信息",
+                "tags": [
+                    "外链下载"
+                ],
+                "summary": "查看文件夹信息",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "外链URL",
+                        "name": "surl",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "提取码",
+                        "name": "ecode",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "文件夹",
+                        "name": "path",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/link/create": {
+            "get": {
+                "description": "创建外链",
+                "tags": [
+                    "外链管理"
+                ],
+                "summary": "link_create 创建外链",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "用户ID",
+                        "name": "uid",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "设备ID",
+                        "name": "device_id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "用户名",
+                        "name": "nick",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "用户头像地址",
+                        "name": "avatar",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "分享根目录",
+                        "name": "base_path",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "分享的文件或目录,可以多个,paths=file1\u0026paths=file2",
+                        "name": "paths",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "4位提取码",
+                        "name": "ecode",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "分享天数",
+                        "name": "days",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "可下载次数,0为无限",
+                        "name": "max_downloads",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/link/delete": {
+            "get": {
+                "description": "获取用户用户创建的所有外链",
+                "tags": [
+                    "外链管理"
+                ],
+                "summary": "links 获取用户用户创建的所有外链",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "创建外链返回ID",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "用户ID",
+                        "name": "uid",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "设备ID",
+                        "name": "device_id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/link/fetch": {
+            "get": {
+                "description": "获取外链详细信息",
+                "tags": [
+                    "外链下载"
+                ],
+                "summary": "获取外链详细信息",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "外链URL",
+                        "name": "surl",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "提取码",
+                        "name": "ecode",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/link/update": {
+            "get": {
+                "description": "更新外链文件",
+                "tags": [
+                    "外链管理"
+                ],
+                "summary": "link_update 更新外链",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "创建外链返回的ID",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "用户ID",
+                        "name": "uid",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "设备ID",
+                        "name": "device_id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "分享的文件或目录,可以多个,paths=file1\u0026paths=file2",
+                        "name": "paths",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/link/user": {
+            "get": {
+                "description": "获取外链的分享用户的信息",
+                "tags": [
+                    "外链管理"
+                ],
+                "summary": "获取外链的分享用户的信息",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "外链URL",
+                        "name": "surl",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/links": {
+            "get": {
+                "description": "获取用户用户创建的所有外链",
+                "tags": [
+                    "外链管理"
+                ],
+                "summary": "links 获取用户用户创建的所有外链",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "用户ID",
+                        "name": "uid",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/query": {
+            "get": {
+                "description": "查询文件信息",
+                "tags": [
+                    "外链下载"
+                ],
+                "summary": "查询文件信息",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "外链URL",
+                        "name": "surl",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "提取码",
+                        "name": "ecode",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "文件",
+                        "name": "paths",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        }
+    }
+}
